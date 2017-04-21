@@ -1,0 +1,57 @@
+﻿<Page x:Class="LeapMotionPro.pages.Prefect_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+	Title="Prefect_page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Style="{StaticResource BorderStyleLeftTop}">
+            <Image Name="displayImage" Margin="5" Width="480"/>
+        </Border>
+        <Border Style="{StaticResource BorderStyleLeftTopRight}" Grid.Column="1">
+            <StackPanel >
+                <Label Style="{DynamicResource LabelHeader1}" Width="200">参数设置</Label>
+                <Label Style="{DynamicResource LabelHeader2}">手型保持时间</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBox Style="{DynamicResource TextBoxStyle2}" Width="60">1000</TextBox>
+                    <Label Style="{DynamicResource LabelHeader3}" Width="50">ms</Label>
+                </StackPanel>
+                <Label Style="{DynamicResource LabelHeader2}">帧率</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ComboBox Width="60" Style="{DynamicResource ComboBoxStyle1}">
+                        <ComboBoxItem >5</ComboBoxItem>
+                        <ComboBoxItem >10</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">20</ComboBoxItem>
+                        <ComboBoxItem >30</ComboBoxItem>
+                        <ComboBoxItem >50</ComboBoxItem>
+                    </ComboBox>
+                    <Label Style="{DynamicResource LabelHeader3}" Width="50">Hz</Label>
+                </StackPanel>
+                <Label Style="{DynamicResource LabelHeader2}">样本数</Label>
+                <TextBlock Name="TxtBlkSmpNum" Style="{DynamicResource TxtBlockStyle1}" Width="100" TextAlignment="Right">0</TextBlock>
+                <Button Name="CollectStart"  Style="{DynamicResource ButtonStyle1}" Height="40">打开</Button>
+            </StackPanel>
+        </Border>        
+        
+        <!--操作按钮-->
+        <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Style="{StaticResource BorderStyleAll}">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="IndexGrabClass" Style="{StaticResource ComboBoxStyle1}" Width="200" Height="40">
+                </ComboBox>
+                <Button Name="ButtonPrefect" Style="{StaticResource ButtonStyle1}" Width="100" Height="40" Margin="20 0"
+                    Visibility="Hidden">预测</Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

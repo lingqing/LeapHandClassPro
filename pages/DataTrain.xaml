@@ -1,0 +1,90 @@
+﻿<Page x:Class="LeapMotionPro.pages.DataTrain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+      xmlns:local="clr-namespace:LeapMotionPro.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="DataTrain">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+            <!--<Image Width="480" Height="360"/>-->
+            <vc:Chart Width="500" Height="320" Name="_chart">
+                <vc:Chart.Series>
+                    <vc:DataSeries RenderAs="QuickLine"/>
+                </vc:Chart.Series>
+            </vc:Chart>
+        </StackPanel>
+        <Border Style="{StaticResource BorderStyleLeftTop}">
+            <StackPanel>
+                <Label Style="{DynamicResource LabelHeader1}" Width="200">训练参数</Label>
+                <Label Style="{DynamicResource LabelHeader2}">训练方式</Label>
+                <StackPanel Orientation="Horizontal" Width="200" Height="40" >
+                    <RadioButton Name="AddTrain" IsChecked="True" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="增量"/>
+                    <RadioButton Name="NewTrain" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="重新" Checked="NewTrain_Checked" />
+                </StackPanel>
+            
+                <Label Style="{DynamicResource LabelHeader2}">停止条件</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Style="{DynamicResource LabelHeader3}" Width="90">最大次数</Label>
+                    <TextBox Name="TxtMaxCnt" Style="{DynamicResource TextBoxStyle2}" Width="80">5000</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Style="{DynamicResource LabelHeader3}" Width="90">最小误差</Label>
+                    <TextBox Name="TxtMinErr" Style="{DynamicResource TextBoxStyle2}" Width="80">0.01</TextBox>
+                </StackPanel>
+                <Button Name="ButtonReadPara" Style="{StaticResource ButtonStyle1}"
+                        Margin="5 15 5 5" Height="40" Click="ButtonReadPara_Click">导入训练结果</Button>
+            </StackPanel>
+        </Border>        
+
+        <Border Style="{StaticResource BorderStyleLeftTopRight}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="500"/>
+                </Grid.ColumnDefinitions>
+                <Label Style="{StaticResource LabelHeader2}" Content="训练状态"/>
+                <StackPanel HorizontalAlignment="Right" Grid.Column="1">
+                    <ProgressBar Name="TrainProcess" Maximum="1000" Minimum="0" Value="0" Width="500" Height="30"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <!--<Label Style="{StaticResource LabelHeader2_2}" Content="第"/>
+                        <Label Style="{StaticResource LabelHeader2_2}" Name="TrainTimes" Content="0" Width="80"/>
+                        <Label Style="{StaticResource LabelHeader2_2}" Content="次"/>-->
+                        <Label Name="TrainState" Style="{StaticResource LabelHeader2_2}" Content="0%" Width="100" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    
+                </StackPanel>
+            </Grid>            
+        </Border>
+        
+        <!--操作按钮-->
+        <Border Style="{StaticResource BorderStyleAll}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <Button Name="OpenDataFile" Style="{StaticResource ButtonStyle1}" Click="OpenDataFile_Click" Width="180" Height="40">导入训练数据</Button>
+                <Border Style="{StaticResource BorderStyleLeftRight}">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Style="{DynamicResource LabelHeader2_2}" Width="90" VerticalAlignment="Center">样本数:</Label>
+                        <TextBlock Name="TxtSampleCnt" Style="{DynamicResource TxtBlockStyle1}" Width="100" TextAlignment="Right" Padding="10 5">0</TextBlock>
+                    </StackPanel>                    
+                </Border>                
+                <Button Name="ButtonDataTrain" Style="{StaticResource ButtonStyle1}" 
+                        Width="100" Height="40" Click="ButtonDataTrain_Click" Visibility="Hidden">训练</Button>
+                <Button Name="SaveTrainFile" Style="{StaticResource ButtonStyle1}"  
+                        Width="180" Height="40" Click="SaveTrainFile_Click">保存训练结果</Button>
+            </StackPanel>
+        </Border>        
+    </Grid>
+</Page>
