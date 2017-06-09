@@ -40,6 +40,15 @@
         <!--<Setter Property="HorizontalAlignment" Value="Center"/>-->
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
     </Style>
+    <Style x:Key="TxtBlockStyle2" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+
+        <!--<Setter Property="HorizontalAlignment" Value="Center"/>-->
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
     <Style x:Key="TextBoxStyle1" TargetType="TextBox">
         <Setter Property="FontFamily" Value="微软雅黑"/>
         <Setter Property="FontSize" Value="20"/>
@@ -127,6 +136,56 @@
             </Setter.Value>
            
         </Setter>
+        
+        <!--<Setter Property="HorizontalAlignment" Value="Center"/>-->
+        <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
+    </Style>
+
+    <Style x:Key="ToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="3,5,3,5" Name="PART_Background">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FF0984FF" Offset="0.0" />
+                                <GradientStop Color="Silver" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Property="Border.Background" TargetName="PART_Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF0984FF" Offset="0.0" />
+                                        <GradientStop Color="Silver" Offset="0.5" />
+                                        <GradientStop Color="#FF0984FF" Offset="0.0" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="ButtonBase.IsPressed" Value="True">
+                            <Setter Property="UIElement.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
         <!--<Setter Property="HorizontalAlignment" Value="Center"/>-->
         <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
     </Style>

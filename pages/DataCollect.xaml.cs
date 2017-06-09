@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Threading;
@@ -21,13 +14,12 @@ namespace LeapMotionPro.pages
     /// DataCollect.xaml 的交互逻辑
     /// </summary>
     public partial class DataCollect : Page
-    {
-        private byte[] imagedata = new byte[1];
+    {        
         private static string sampleFileName = "";
         private List<HandType> handTypes;
         private long sampleNum = 0;
         private bool isGrapSample = false; // 采集中标志位
-        
+                
         private int updateFreq = 20;
         private long grapTimes = 10;
         private int grapTimesIndex = 0; // 已采集次数
@@ -36,8 +28,7 @@ namespace LeapMotionPro.pages
         
         DispatcherTimer readFrameTimer = new DispatcherTimer();
         private WriteableBitmap bitmap;
-        Leap.Image image = new Leap.Image();
-       
+             
         public DataCollect()
         {
             InitializeComponent();
@@ -57,17 +48,29 @@ namespace LeapMotionPro.pages
             }
             BitmapPalette palette = new BitmapPalette(grayscale);
             bitmap = new WriteableBitmap(640, 480, 72, 72, PixelFormats.Gray8, palette);
-            displayImage.Source = bitmap;
+            displayImage.Source = bitmap;            
+
             // timer:定时触发Leap Frame
             readFrameTimer.Tick += new System.EventHandler(updataFrame);
             readFrameTimer.Interval = new TimeSpan(0, 0, 0, 0, 25);
+            //readFrameTimer.Start();
+        }
+        // page 暂停与继续
+        public void pageActive()
+        {
             readFrameTimer.Start();
+        }
+        public void pagePause()
+        {
+            readFrameTimer.Stop();
         }
         // 更新
         void updataFrame(object sender, EventArgs e)
         {
-            //imagedata = image.Data;
-            //bitmap.WritePixels(new Int32Rect(0, 0, 640, 480), imagedata, 640, 0);            
+            //LeapMotionCtl.InitLeapMotion();
+            WriteableBitmap bm = LeapMotionCtl.GetImage();
+            bitmap = bm;
+            displayImage.Source = bitmap;
             if (isGrapSample)
             {
                 float[] item = LeapMotionCtl.LeapGrabSingleData();
@@ -82,7 +85,7 @@ namespace LeapMotionPro.pages
                     // 整理并写入 
                     List<float[]> gdl = SampleFilter.CleraFaultVector(sampleDataList);
                     if (gdl.Count <= 0) return;
-                    int grabClass = IndexGrabClass.SelectedIndex;
+                    int grabClass = IndexGrabClass.SelectedIndex + 1;  // 避开0
                     bool isExisted = false;
                     isExisted = File.Exists(sampleFileName);
                     // 文件存在           
@@ -93,10 +96,10 @@ namespace LeapMotionPro.pages
                             file.Write(data[0].ToString());
                             for (int i = 1; i < data.Length; i++)
                             {
-                                file.Write("\t");
+                                file.Write(",");
                                 file.Write(data[i].ToString());
                             }
-                            file.Write("\t");
+                            file.Write(",");
                             file.WriteLine(grabClass.ToString());
                         }
                         file.Close();
@@ -113,8 +116,8 @@ namespace LeapMotionPro.pages
         {
             SaveFileDialog fileDialog = new SaveFileDialog();
             fileDialog.OverwritePrompt = true;//询问是否覆盖
-            fileDialog.Filter = "*.txt|*.txt";
-            fileDialog.DefaultExt = "txt";//缺省默认后缀名
+            fileDialog.Filter = "*.csv|*.csv";
+            fileDialog.DefaultExt = "csv";//缺省默认后缀名
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 sampleFileName = fileDialog.FileName;
@@ -126,6 +129,8 @@ namespace LeapMotionPro.pages
                 //System.IO.Stream fileStream = fileDialog.OpenFile();//保存
                 //fileStream.Close();
                 ButtonDataGrab.Visibility = Visibility.Visible;
+                sampleNum = 0;
+                TxtBlkSmpNum.Text = "0";
             }
             else
             { return; }
@@ -163,6 +168,7 @@ namespace LeapMotionPro.pages
                     break;
             }
             LabelHoldTime.Content = (1000 * grapTimes / updateFreq).ToString();
+            readFrameTimer.Interval = new TimeSpan(0, 0, 0, 0, 1000/updateFreq);
         }
 
 
@@ -173,6 +179,5 @@ namespace LeapMotionPro.pages
             isGrapSample = true;
             ButtonDataGrab.IsEnabled = false;    
         }
-
     }
 }

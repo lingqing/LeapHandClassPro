@@ -9,7 +9,7 @@ namespace LeapMotionPro
     public class BpNet
     {
         public int inNum;//输入节点数  
-        int hideNum;//隐层节点数  
+        public int hideNum;//隐层节点数  
         public int outNum;//输出层节点数  
         public int sampleNum;//样本总数  
 
@@ -434,7 +434,6 @@ namespace LeapMotionPro
             StreamReader sr;
             try
             {
-
                 sr = new StreamReader(filename);
 
                 String line;
@@ -451,7 +450,6 @@ namespace LeapMotionPro
                     i++;
                 }
                 sr.Close();
-
             }
             catch (Exception e)
             {
@@ -500,52 +498,41 @@ namespace LeapMotionPro
             {
                 sw = new StreamWriter(filename);
                 // 文件信息
-                string str = w.GetLength(0).ToString() + " "
-                         + v.GetLength(0).ToString() + " "
-                         + b1.Length.ToString() + " "
-                         + b2.Length.ToString();
-                sw.WriteLine(str);   
+                // 写入 Para
+                string str = inNum.ToString() + " "
+                        + hideNum.ToString() + " "
+                        + outNum.ToString() + " "
+                        + in_rate.ToString();
+                sw.WriteLine(str);                
                 // 写入 w
                 for (int i = 0; i < w.GetLength(0); i++)
-                {
+                {                   
                     for (int j = 0; j < w.GetLength(1); j++)
                     {
-                        str = w[i, j].ToString() + " ";
-                        str.Replace("\x20", "&nbsp;");  
-                        sw.Write(str);
+                        sw.Write((string)(w[i, j] + " "));                        
                     }
                     sw.WriteLine();
                 }
                 // 写入 v
                 for (int i = 0; i < v.GetLength(0); i++)
-                {
+                {                    
                     for (int j = 0; j < v.GetLength(1); j++)
                     {
-                        str = v[i, j].ToString() + " ";
-                        sw.Write(str);
+                        sw.Write((string)(v[i, j] + " "));                     
                     }
                     sw.WriteLine();
                 }
-                // 写入 b1
+                // 写入 b1                
                 for (int i = 0; i < b1.Length; i++)
                 {
-                    str = b1[i].ToString() + " ";
-                    sw.Write(str);
+                    sw.Write((string)(b1[i] + " "));                    
                 }
                 sw.WriteLine();
-                // 写入 b2
+                // 写入 b2                
                 for (int i = 0; i < b2.Length; i++)
                 {
-                    str = b2[i].ToString() + " ";
-                    sw.Write(str);
-                }
-                sw.WriteLine();
-                // 写入 Para
-                str = inNum.ToString() + " "
-                        + hideNum.ToString() + " "
-                        + outNum.ToString() + " "
-                        + in_rate.ToString();
-                sw.Write(str);
+                    sw.Write((string)(b2[i] + " "));
+                }               
                 sw.Close();
             }
             catch (Exception e)
@@ -561,69 +548,56 @@ namespace LeapMotionPro
             try
             {
                 sr = new StreamReader(filename);
-                string line;
-                // 读文件信息
-                line = sr.ReadLine();
-                if (line == null) return false;
-                string[] fileInfo = line.Split(' ');
-                if (fileInfo.Length != 4) return false;
-                long wLen = Convert.ToInt64(fileInfo[0]);
-                long vLen = Convert.ToInt64(fileInfo[1]);
-                long b1Len = Convert.ToInt64(fileInfo[2]);
-                long b2Len = Convert.ToInt64(fileInfo[3]);
+                String line;
+               
+                // 读 para 读文件信息
+                if (null == (line = sr.ReadLine())) return false;
+                string[] strArr = line.Trim().Split(' ');
+                this.inNum = Convert.ToInt32(strArr[0]);
+                this.hideNum = Convert.ToInt32(strArr[1]);
+                this.outNum = Convert.ToInt32(strArr[2]);
+                this.in_rate = Convert.ToDouble(strArr[3]);
+                
+                this.initial();
                 // 读 w
-                for (int i = 0; i < wLen; i++)
+                for (int i = 0; i < inNum; i++)
                 {
                     if (null == (line = sr.ReadLine())) return false;;
-                    string[] s1 = line.Split(' ');
+                    string[] s1 = line.Trim().Split(' ');
                     for (int j = 0; j < s1.Length; j++)
                     {
                         w[i, j] = Convert.ToDouble(s1[j]);
                     }
                 }
                 // 读 v
-                for (int i = 0; i < vLen; i++)
+                for (int i = 0; i < hideNum; i++)
                 {
                     if (null == (line = sr.ReadLine())) return false;
-                    string[] s1 = line.Split(' ');
+                    string[] s1 = line.Trim().Split(' ');
                     for (int j = 0; j < s1.Length; j++)
                     {
                         v[i, j] = Convert.ToDouble(s1[j]);
                     }
                 }
                 // 读b1
-                for (int i = 0; i < b1Len; i++)
+                if (null == (line = sr.ReadLine())) return false;
+                string[] sb = line.Trim().Split(' ');                
+                for (int i = 0; i < sb.Length; i++)
                 {
-                    if (null == (line = sr.ReadLine())) return false;
-                    string[] s1 = line.Split(' ');    
-                    for (int j = 0; j < s1.Length; j++)
-                    {
-                        b1[i] = Convert.ToDouble(s1[j]);                        
-                    }
+                    b1[i] = Convert.ToDouble(sb[i]);
                 }
                 // 读b2
-                for (int i = 0; i < b2Len; i++)
+                if (null == (line = sr.ReadLine())) return false;
+                sb = line.Trim().Split(' ');                
+                for (int i = 0; i < sb.Length; i++)
                 {
-                    if (null == (line = sr.ReadLine())) return false;
-                    string[] s1 = line.Split(' ');
-                    for (int j = 0; j < s1.Length; j++)
-                    {
-                        b2[i] = Convert.ToDouble(s1[j]);
-                    }
+                    b2[i] = Convert.ToDouble(sb[i]);                   
                 }
-                // 读 para
-                if (null == (line = sr.ReadLine())) return false;                
-                string[] strArr = line.Split(' ');
-                this.inNum = Convert.ToInt32(strArr[0]);
-                this.hideNum = Convert.ToInt32(strArr[1]);
-                this.outNum = Convert.ToInt32(strArr[2]);
-                this.in_rate = Convert.ToDouble(strArr[3]);
-
                 sr.Close();
             }
             catch (Exception e)
             {                
-                throw e;
+                Console.WriteLine(e.ToString());
             }
             return true;
         }// end of function

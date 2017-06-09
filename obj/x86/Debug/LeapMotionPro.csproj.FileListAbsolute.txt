@@ -1,15 +1,3 @@
-E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.exe
-E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.pdb
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\MainWindow.baml
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\MainWindow.g.cs
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\App.g.cs
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro_MarkupCompile.cache
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.g.resources
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.Properties.Resources.resources
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.csproj.GenerateResource.Cache
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.exe
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.pdb
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\styles\TabControlStyle.baml
 K:\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.exe
 K:\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.pdb
 K:\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.exe
@@ -51,16 +39,84 @@ D:\LeapTest02\LeapMotionPro\obj\x86\Debug\styles\LabelStyle.baml
 D:\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.g.resources
 D:\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.Properties.Resources.resources
 D:\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.csproj.GenerateResource.Cache
+K:\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.exe.config
+E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.exe.config
+E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.exe
+E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\LeapMotionPro.pdb
+E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\WPFVisifire.Charts.dll
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.csprojResolveAssemblyReference.cache
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\MainWindow.baml
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Home_page.baml
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\styles\TabControlStyle.baml
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\App.baml
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\MainWindow.g.cs
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\DataCollect.g.cs
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\DataTrain.g.cs
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Home_page.g.cs
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Prefect_page.g.cs
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\App.g.cs
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro_MarkupCompile.cache
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro_MarkupCompile.lref
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\DataCollect.baml
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\DataTrain.baml
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\styles\LabelStyle.baml
-E:\VSLeapPro\LeapTest02\LeapMotionPro\bin\Debug\WPFVisifire.Charts.dll
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.csprojResolveAssemblyReference.cache
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Home_page.baml
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Home_page.g.cs
 E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Prefect_page.baml
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\pages\Prefect_page.g.cs
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\styles\LabelStyle.baml
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.g.resources
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.Properties.Resources.resources
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.csproj.GenerateResource.Cache
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.exe
+E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\LeapMotionPro.pdb
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\bin\Debug\LeapMotionPro.exe.config
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.exe
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.pdb
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\bin\Debug\LeapMotionPro.exe
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\bin\Debug\LeapMotionPro.pdb
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.csprojResolveAssemblyReference.cache
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\MainWindow.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\Home_page.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\styles\TabControlStyle.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\App.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\MainWindow.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\DataCollect.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\DataTrain.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\Home_page.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\Prefect_page.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\App.g.cs
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro_MarkupCompile.cache
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro_MarkupCompile.lref
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\DataCollect.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\DataTrain.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\pages\Prefect_page.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\styles\LabelStyle.baml
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.g.resources
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.Properties.Resources.resources
+H:\06. 项目\03. LeapMotion\LeapMotionPro524\obj\x86\Debug\LeapMotionPro.csproj.GenerateResource.Cache
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\LeapMotionPro.exe.config
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.exe
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.pdb
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\LeapMotionPro.exe
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\LeapMotionPro.pdb
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.csprojResolveAssemblyReference.cache
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\MainWindow.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\Home_page.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\styles\TabControlStyle.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\App.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\MainWindow.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\DataCollect.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\DataTrain.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\Home_page.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\Prefect_page.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\App.g.cs
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro_MarkupCompile.cache
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro_MarkupCompile.lref
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\DataCollect.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\DataTrain.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\pages\Prefect_page.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\styles\LabelStyle.baml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.g.resources
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.Properties.Resources.resources
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\LeapMotionPro.csproj.GenerateResource.Cache
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\SharpOSC.dll
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\SharpOSC.pdb
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\LeapCSharp.NET4.5.dll
+F:\10. WorkFile\VisualStudio\LeapProV2.0\bin\Debug\WPFVisifire.Charts.dll

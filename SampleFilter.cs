@@ -11,10 +11,37 @@ namespace LeapMotionPro
         public static List<float[]> CleraFaultVector(List<float[]> vecIn)
         {
             if(vecIn.Count <= 1) return null;
+            
+            bool[] isGood = FindFaultVector(vecIn);           
+
+            List<float[]> ret = new List<float[]>();
+            for (int i = 0; i < vecIn.Count; i++)
+            {
+                if (isGood[i]) ret.Add(vecIn[i]);
+            }
+
+            return ret;
+        }
+
+        public static void UpdateFaultVector(List<float[]> vecIn , bool[] isGood)
+        {
+            if (vecIn.Count <= 1) return;
+            if (vecIn.Count != isGood.Length) return;
+
+            List<float[]> ret = new List<float[]>();
+            for (int i = 0; i < vecIn.Count; i++)
+            {
+                if (isGood[i]) ret.Add(vecIn[i]);
+            }
+        }
+        // 
+        public static bool[] FindFaultVector(List<float[]> vecIn)
+        {
+            if (vecIn.Count <= 1) return null;
 
             int vecLength = vecIn[0].Length;  // 向量长度
 
-            float[,] residual = new float[vecIn.Count,vecLength]; // 残差
+            float[,] residual = new float[vecIn.Count, vecLength]; // 残差
 
             float[] avg = new float[vecLength];
             double[] sum = new double[vecLength];
@@ -30,14 +57,14 @@ namespace LeapMotionPro
                 sum[j] = 0;
                 variance[j] = 0;
                 standev[j] = 0;
-                variancesum[j] = 0;                
+                variancesum[j] = 0;
             }
             // 求均值
             foreach (var vec in vecIn)
             {
                 for (int j = 0; j < vecLength; j++)
                 {
-                    sum[j] += vec[j]; 
+                    sum[j] += vec[j];
                 }
             }
             for (int j = 0; j < vecLength; j++)
@@ -60,7 +87,7 @@ namespace LeapMotionPro
                 {
                     variancesum[j] += residual[i, j] * residual[i, j];
                 }
-                variance[j] = variancesum[j] / (vecIn.Count-1);
+                variance[j] = variancesum[j] / (vecIn.Count - 1);
                 standev[j] = Math.Sqrt(variance[j]);
             }
             // 剔除坏点
@@ -69,20 +96,14 @@ namespace LeapMotionPro
                 isGood[i] = true;
                 for (int j = 0; j < vecLength; j++)
                 {
-                    if (residual[i,j] > 2 * standev[j])
+                    if (residual[i, j] > 2 * standev[j])
                     {
                         isGood[i] = false; break;
                     }
                 }
             }
-
-            List<float[]> ret = new List<float[]>();
-            for (int i = 0; i < vecIn.Count; i++)
-            {
-                if (isGood[i]) ret.Add(vecIn[i]);
-            }
-
-            return ret;
+            return isGood;
         }
+
     }
 }

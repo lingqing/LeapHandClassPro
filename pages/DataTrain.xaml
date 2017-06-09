@@ -16,12 +16,12 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
             <!--<Image Width="480" Height="360"/>-->
-            <vc:Chart Width="500" Height="320" Name="_chart">
+            <vc:Chart Width="500" Height="320" Name="_chart" >
                 <vc:Chart.Series>
                     <vc:DataSeries RenderAs="QuickLine"/>
                 </vc:Chart.Series>
@@ -31,9 +31,9 @@
             <StackPanel>
                 <Label Style="{DynamicResource LabelHeader1}" Width="200">训练参数</Label>
                 <Label Style="{DynamicResource LabelHeader2}">训练方式</Label>
-                <StackPanel Orientation="Horizontal" Width="200" Height="40" >
-                    <RadioButton Name="AddTrain" IsChecked="True" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="增量"/>
-                    <RadioButton Name="NewTrain" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="重新" Checked="NewTrain_Checked" />
+                <StackPanel Orientation="Horizontal" Width="200" Height="40">                   
+                    <RadioButton Name="AddTrain" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="增量"/>
+                    <RadioButton Name="NewTrain" IsChecked="True" GroupName="TrainWay" Style="{DynamicResource RadioStyle1}" Content="重新" Checked="NewTrain_Checked" />
                 </StackPanel>
             
                 <Label Style="{DynamicResource LabelHeader2}">停止条件</Label>
@@ -46,7 +46,7 @@
                     <TextBox Name="TxtMinErr" Style="{DynamicResource TextBoxStyle2}" Width="80">0.01</TextBox>
                 </StackPanel>
                 <Button Name="ButtonReadPara" Style="{StaticResource ButtonStyle1}"
-                        Margin="5 15 5 5" Height="40" Click="ButtonReadPara_Click">导入训练结果</Button>
+                        Margin="5 15 5 5" Height="40" Click="ButtonReadPara_Click">导入分类器</Button>
             </StackPanel>
         </Border>        
 
@@ -63,6 +63,8 @@
                         <!--<Label Style="{StaticResource LabelHeader2_2}" Content="第"/>
                         <Label Style="{StaticResource LabelHeader2_2}" Name="TrainTimes" Content="0" Width="80"/>
                         <Label Style="{StaticResource LabelHeader2_2}" Content="次"/>-->
+                        <Button Name="ButtonStopTrain" Style="{StaticResource ButtonStyle1}"
+                        Margin="5 5 25 5" Height="40" Click="ButtonStopTrain_Click" Width="120">停止训练</Button>
                         <Label Name="TrainState" Style="{StaticResource LabelHeader2_2}" Content="0%" Width="100" HorizontalAlignment="Right"/>
                     </StackPanel>
                     
@@ -83,7 +85,7 @@
                 <Button Name="ButtonDataTrain" Style="{StaticResource ButtonStyle1}" 
                         Width="100" Height="40" Click="ButtonDataTrain_Click" Visibility="Hidden">训练</Button>
                 <Button Name="SaveTrainFile" Style="{StaticResource ButtonStyle1}"  
-                        Width="180" Height="40" Click="SaveTrainFile_Click">保存训练结果</Button>
+                        Width="180" Height="40" Click="SaveTrainFile_Click">保存分类器</Button>
             </StackPanel>
         </Border>        
     </Grid>

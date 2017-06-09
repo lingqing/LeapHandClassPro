@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\VSLeapPro\LeapTest02\LeapMotionPro\obj\x86\Debug\
+F:\10. WorkFile\VisualStudio\LeapProV2.0\obj\x86\Debug\
 LeapMotionPro
 none
 false
 DEBUG;TRACE
-E:\VSLeapPro\LeapTest02\LeapMotionPro\App.xaml
+F:\10. WorkFile\VisualStudio\LeapProV2.0\App.xaml
 71523259221
 
 13433082871
-15-1260342255
+17-779415442
 MainWindow.xaml;pages\DataCollect.xaml;pages\DataTrain.xaml;pages\Home_page.xaml;pages\Prefect_page.xaml;styles\LabelStyle.xaml;styles\TabControlStyle.xaml;
 
 False

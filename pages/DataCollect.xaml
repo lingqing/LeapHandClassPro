@@ -28,8 +28,8 @@
                     <Label Style="{DynamicResource LabelHeader3}" Width="60"  Name="LabelHoldTime">500</Label>
                     <Label Style="{DynamicResource LabelHeader3}" Width="50">ms</Label>
                 </StackPanel>            
-                <Label Style="{DynamicResource LabelHeader2}">帧率</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label Style="{DynamicResource LabelHeader2}" Width="80">帧率</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">                    
                     <ComboBox Width="60" Style="{DynamicResource ComboBoxStyle1}" Name="BoxFreq">
                         <ComboBoxItem >5</ComboBoxItem>
                         <ComboBoxItem >10</ComboBoxItem>
@@ -40,15 +40,15 @@
                     <Label Style="{DynamicResource LabelHeader3}" Width="50">Hz</Label>
                 </StackPanel>
                 <!--频数-->
-                <Label Style="{DynamicResource LabelHeader2}">连拍</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBox Style="{DynamicResource TextBoxStyle2}" Width="60" Name="GrapTimes">10</TextBox>
+                <Label Style="{DynamicResource LabelHeader2}" Width="80">连拍</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">                    
+                    <TextBox Style="{DynamicResource TextBoxStyle2}" Width="60" Name="GrapTimes" TextAlignment="Right">10</TextBox>
                     <Label Style="{DynamicResource LabelHeader3}" Width="50">次</Label>
                 </StackPanel>                
                 <Button Name="ButtonSetPara"  Style="{DynamicResource ButtonStyle1}" Height="40" Click="ButtonSetPara_Click">设置</Button>
                 <Border Style="{StaticResource BorderStyleTop}"/>
                 <Label Style="{DynamicResource LabelHeader2}">样本数</Label>
-                <TextBlock Name="TxtBlkSmpNum" Style="{DynamicResource TxtBlockStyle1}" Width="100" TextAlignment="Right">0</TextBlock>
+                <TextBlock Name="TxtBlkSmpNum" Style="{DynamicResource TxtBlockStyle1}" Width="100" TextAlignment="Right">0</TextBlock>                
             </StackPanel>
         </Border>
  

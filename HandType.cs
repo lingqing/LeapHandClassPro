@@ -28,7 +28,7 @@ namespace LeapMotionPro
                 String line;
                 for (int i = 0; (line = sr.ReadLine())!= null; i++)
                 {
-                    hands.Add(new HandType {index = i,name=line });
+                    hands.Add(new HandType {index = i+1,name=line });
                 }
                 sr.Close();
             }

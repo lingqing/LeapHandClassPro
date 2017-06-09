@@ -75,14 +75,14 @@
                         
                     </TabItem>
 
-                    <TabItem Header="训练" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold"
+                    <!--<TabItem Header="训练" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold"
                              Style="{DynamicResource TabItemStyle}" TextOptions.TextFormattingMode="Display"
                              PreviewMouseLeftButtonDown="TabItem_PreviewMouseLeftButtonDown">
                         <TabItem.Background>
                             <ImageBrush ImageSource="images/graphicon.png" />
                         </TabItem.Background>                        
-                    </TabItem>
-
+                    </TabItem>-->
+                    <!--v2.0版删除训练，结合Matlab Or GRT-->
 
                 </TabControl>
             </StackPanel>
@@ -103,9 +103,9 @@
                 <Label Name="_debug" Height="30" Width="Auto" Content="Test" VerticalAlignment="Stretch"/>
             </StackPanel>
             <!--end Content-->
-            <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Background="Silver" Orientation="Horizontal">
-                <Label>test</Label>
-                <Label Name="RunState" Width="100">state</Label>
+            <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Background="Silver" Orientation="Horizontal">
+                <Label Name="ParaState" Width="300" Margin="5 0 5 0" BorderThickness="0 0 1 0" BorderBrush="White">state</Label>
+                <Label Name="RunState" Width="500">state</Label>
             </StackPanel>
         </Grid>        
     </Grid>

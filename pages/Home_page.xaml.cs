@@ -23,5 +23,14 @@ namespace LeapMotionPro.pages
         {
             InitializeComponent();
         }
+        // page 暂停与继续
+        public void pageActive()
+        {
+            
+        }
+        public void pagePause()
+        {
+            
+        }
     }
 }
