@@ -93,14 +93,13 @@ namespace LeapMotionPro.pages
                     {
                         foreach (var data in gdl)
                         {
-                            file.Write(data[0].ToString());
-                            for (int i = 1; i < data.Length; i++)
+                            file.Write(grabClass.ToString());                            
+                            for (int i = 0; i < data.Length; i++)
                             {
                                 file.Write(",");
                                 file.Write(data[i].ToString());
                             }
-                            file.Write(",");
-                            file.WriteLine(grabClass.ToString());
+                            file.WriteLine();                            
                         }
                         file.Close();
                         sampleNum += gdl.Count;

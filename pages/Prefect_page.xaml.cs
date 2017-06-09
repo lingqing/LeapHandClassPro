@@ -20,8 +20,8 @@ namespace LeapMotionPro.pages
         private string recordeFileName;
         private bool isPrefect = false;
         private bool isRecord = false;
-        // GTK
-        private bool sendToGTK = false; // 直接发送到GTK标志
+        // GRT
+        private bool sendToGRT = false; // 直接发送到GRT标志
         OscMessage message = new OscMessage("/Data", 1);
         UDPSender oscSender = new UDPSender("127.0.0.1", 9000);
 
@@ -76,7 +76,7 @@ namespace LeapMotionPro.pages
             bitmap = bm;
             displayImage.Source = bitmap;
             // prefect 改为 record
-            if (isRecord)
+            if (isRecord | sendToGRT)
             {
                 // 采集3帧
                 for (int i = 0; i < 3; i++)
@@ -151,23 +151,26 @@ namespace LeapMotionPro.pages
                 //}
 
                 //TxtPrefectResult.Text = handTypes[maxType].index + ": " + handTypes[maxType].name;
-
-                using (StreamWriter sw = new StreamWriter(recordeFileName, true))
+                if(isRecord)
                 {
-                    //sw.WriteLine(maxType.ToString());
-                    sw.Write(prefDataIn[0].ToString());
-                    for (int i = 1; i < prefDataIn.Length; i++)
+                    using (StreamWriter sw = new StreamWriter(recordeFileName, true))
                     {
-                        sw.Write(",");
-                        sw.Write(prefDataIn[i].ToString());
-                    }
-                    sw.WriteLine();
-                    sw.Close();
-                    recordedNum++;
+                        //sw.WriteLine(maxType.ToString());
+                        sw.Write(prefDataIn[0].ToString());
+                        for (int i = 1; i < prefDataIn.Length; i++)
+                        {
+                            sw.Write(",");
+                            sw.Write(prefDataIn[i].ToString());
+                        }
+                        sw.WriteLine();
+                        sw.Close();
+                        recordedNum++;
 
-                    TxtPrefectResult.Text = "记录数目：" + recordedNum.ToString();
-                } 
-                if(sendToGTK)
+                        TxtPrefectResult.Text = "记录数目：" + recordedNum.ToString();
+                    }
+                }
+                // 发送至GRT
+                if(sendToGRT)
                 {
                     message = new SharpOSC.OscMessage("/Data", prefDataIn[0], prefDataIn[1], prefDataIn[2], prefDataIn[3], prefDataIn[4],
                     prefDataIn[5], prefDataIn[6], prefDataIn[7], prefDataIn[8], prefDataIn[9], prefDataIn[10], prefDataIn[11], prefDataIn[12], prefDataIn[13], prefDataIn[14],
@@ -292,10 +295,10 @@ namespace LeapMotionPro.pages
             Monitor.ReportMsg(0, "帧频：" + updateFreq.ToString());
         }
 
-        // 发送至GTK
-        private void BtnSendToGTK_Click(object sender, RoutedEventArgs e)
+        // 发送至GRT
+        private void BtnSendToGRT_Click(object sender, RoutedEventArgs e)
         {
-            sendToGTK = (bool)BtnSendToGTK.IsChecked;
+            sendToGRT = (bool)BtnSendToGRT.IsChecked;
         }
     }
 }

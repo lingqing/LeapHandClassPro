@@ -41,7 +41,7 @@
                 <Border Style="{StaticResource BorderStyleTop}">
                     <TextBlock Name="TxtPrefectResult" Style="{StaticResource TxtBlockStyle2}">结果</TextBlock>
                 </Border>
-                <ToggleButton Style="{StaticResource ToggleButtonStyle}" Name="BtnSendToGTK" FontSize="20" Click="BtnSendToGTK_Click">发送至GTK</ToggleButton>
+                <ToggleButton Style="{StaticResource ToggleButtonStyle}" Name="BtnSendToGRT" FontSize="20" Click="BtnSendToGRT_Click">发送至GRT</ToggleButton>
             </StackPanel>            
         </Border>     
         
